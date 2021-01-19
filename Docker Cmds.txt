@@ -1,0 +1,73 @@
+Listar containers em execução:
+Sintaxe: docker ps
+
+Listar todos containers:
+docker ps -a
+
+Listar imagens:
+Sintaxe: docker images
+
+Criar imagem:
+docker buid -t TAG_NAME:VERSION .
+Exemplo:
+docker build -t helloworld:1.0 .
+
+Executar imagem (criará e executatá um container):
+Sintaxe: docker run          nome_imagem:versão
+		 ou (para se atachar no container):
+Sintaxe: docker run -it      nome_imagem:versão
+		 ou (para mapear as portas):
+Sintaxe: docker run -p 81:80 nome_imagem:versão
+		 onde -p <hostPort>:<containerPort>
+
+Reiniciar container:
+Sintaxe: docker restart NAME
+		 onde NAME é o nome do container a ser reiniciado.
+Exemplo: docker restart sqlserver
+
+Parar container:
+Sintaxe: docker stop NAME
+
+Se atachar a um container:
+docker attach nome_container
+
+Entrar no diretório:
+cd /nome_diretório
+
+Excluir um container:
+Sintaxe: docker rm CONTAINER_ID
+ou
+Sintaxe: docker rm CONTAINER_ID CONTAINER_ID
+
+Excluir todos containers:
+docker rm $(docker ps -a -q) -f
+
+Excluir uma imagem:
+Sintaxe: docker rmi IMAGE_ID
+ou
+Sintaxe: docker rmi IMAGE_ID IMAGE_ID
+
+Excluir todas imagens:
+docker rmi $(docker images -a -q) -f
+
+Ver versão do do daemon:
+Sintaxe: docker -v
+
+Ver mais detalhes da versão:
+Sintaxe: docker version
+ou
+Sintaxe: docker info
+
+Executar comandos dentro de um container:
+Sintaxe: docker container exec CONTAINER_ID COMANDO
+Exemplo COMANDO para listar os arquivos do container : ls /
+Exemplo COMANDO para listar os arquivos do container do diretório app : ls /app
+
+Copiar arquivo do host para o container:
+Sintaxe: docker cp ARQUIVO_NO_HOST CONTAINER_ID:ARQUIVO_NO_CONTAINER
+Exemplo: docker cp /tmp/car.jpeg 3hd3hd03hd3:/tmp
+		 No exemplo acima, será copiado o arquiov car.jpeg do host para o diretório tmp do container.
+		 
+Copiar arquivo do container para o host:
+Sintaxe: docker cp CONTAINER_ID:ARQUIVO_NO_CONTAINER ARQUIVO_NO_HOST
+Exemplo: docker cp 3hd3hd03hd3:/tmp/car.jpeg /tmp/car2.jpeg

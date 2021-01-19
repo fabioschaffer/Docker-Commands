@@ -1,0 +1,22 @@
+Segue abaixo passo a passo para publicar imagem no Docker Hub:
+
+1) Criar uma tag para a imagem.
+Sintaxe:
+docker tag <IMAGE_ID> <DOCKER_HUB_USER>/<DESTINATION_IMAGE>:<TAG>
+Onde:
+IMAGE_ID = nome da imagem (coluna REPOSITORY) e a tag OU
+           id da imagem (COLUNA IMAGE ID).
+Exemplo:
+docker tag imglinux1:1.0 fabioschaffer/imglinux1:1.0
+
+2) Logar no docker hub.
+Sintaxe: docker login docker.io
+
+3) Enviar imagem para o docker hub.
+Sintaxe: docker push IMAGE_NAME
+Exemplo: docker push fabioschaffer/imglinux1:1.0
+
+Segue abaixo passo a passo para baixar a imagem do Docker hub:
+
+1) Baixar imagem:
+Sintaxe: docker pull usuario/<NOME_IMAGEM>:<TAG>

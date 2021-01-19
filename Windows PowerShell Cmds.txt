@@ -1,0 +1,3 @@
+Ver conteúdo de arquivo de texto:
+more Dockerfile
+onde Dockerfile é o nome do arquivo. Dá pra digitar o início do arquivo e pressionar tab que o power shell completa.

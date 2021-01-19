@@ -1,0 +1,5 @@
+O Docker funciona em praticamente todas distribuições do Linux modernas.
+Pré-requisitos para executar o Docker no Linux:
+- Arquitetura 64 bits.
+- Linux kernel versão 3.8 ou superior.
+
