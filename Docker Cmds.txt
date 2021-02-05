@@ -13,12 +13,12 @@ Exemplo:
 docker build -t helloworld:1.0 .
 
 Executar imagem (criará e executatá um container):
-- Execução básica: 			docker run 			nome_imagem:versão
-- Se atachar no container: 	docker run -it      nome_imagem:versão
-- Mapear as portas:			docker run -p 81:80 nome_imagem:versão
+- Execução básica: 			docker run 			REPOSITORY:TAG
+- Se atachar no container: 	docker run -it      REPOSITORY:TAG
+- Mapear as portas:			docker run -p 81:80 REPOSITORY:TAG
 							onde -p <hostPort>:<containerPort>
-- Mapear volume:			docker run -v <DIRETORIO_HOST>:<DIRETORIO_CONTAINER> nome_imagem:versão
-							Exemplo: docker run -v /mnt/files/:/app/wwwroot/files nome_imagem:versão
+- Mapear volume:			docker run -v <DIRETORIO_HOST>:<DIRETORIO_CONTAINER> REPOSITORY:TAG
+							Exemplo: docker run -v /mnt/files/:/app/wwwroot/files REPOSITORY:TAG
 
 Reiniciar container:
 Sintaxe: docker restart NAME

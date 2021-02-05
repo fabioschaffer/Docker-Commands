@@ -1,0 +1,10 @@
+1) Salvar imagem:
+Sintaxe: docker save -o nome_arquivo.tar REPOSITORY:TAG
+Exemplo: docker save -o bookapi_1_4.tar bookapi:1.4
+
+2) Copiar a imagem para o outro host. Isso pode ser feito por qualquer sistema de arquivos. Exemplo: Windows Explorer.
+
+3) Restaurar a imagem no host de destino:
+Sintaxe: docker load < nome_arquivo.tar
+
+4) A imagem já está restaurada, e pode ser visualizada via docker images.
