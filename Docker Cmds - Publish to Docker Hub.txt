@@ -20,3 +20,5 @@ Segue abaixo passo a passo para baixar a imagem do Docker hub:
 
 1) Baixar imagem:
 Sintaxe: docker pull usuario/<NOME_IMAGEM>:<TAG>
+OU
+Executar direto o comando para criar container (docker run). O docker tentará buscar a imagem localmente, se não encontrar, faz o download dela.

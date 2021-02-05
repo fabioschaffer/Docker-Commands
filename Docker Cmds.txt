@@ -13,12 +13,12 @@ Exemplo:
 docker build -t helloworld:1.0 .
 
 Executar imagem (criará e executatá um container):
-Sintaxe: docker run          nome_imagem:versão
-		 ou (para se atachar no container):
-Sintaxe: docker run -it      nome_imagem:versão
-		 ou (para mapear as portas):
-Sintaxe: docker run -p 81:80 nome_imagem:versão
-		 onde -p <hostPort>:<containerPort>
+- Execução básica: 			docker run 			nome_imagem:versão
+- Se atachar no container: 	docker run -it      nome_imagem:versão
+- Mapear as portas:			docker run -p 81:80 nome_imagem:versão
+							onde -p <hostPort>:<containerPort>
+- Mapear volume:			docker run -v <DIRETORIO_HOST>:<DIRETORIO_CONTAINER> nome_imagem:versão
+							Exemplo: docker run -v /mnt/files/:/app/wwwroot/files nome_imagem:versão
 
 Reiniciar container:
 Sintaxe: docker restart NAME
@@ -64,9 +64,9 @@ Exemplo COMANDO para listar os arquivos do container : ls /
 Exemplo COMANDO para listar os arquivos do container do diretório app : ls /app
 
 Copiar arquivo do host para o container:
-Sintaxe: docker cp ARQUIVO_NO_HOST CONTAINER_ID:ARQUIVO_NO_CONTAINER
+Sintaxe: docker cp ARQUIVO_NO_HOST CONTAINER_ID:DIRETORIO
 Exemplo: docker cp /tmp/car.jpeg 3hd3hd03hd3:/tmp
-		 No exemplo acima, será copiado o arquiov car.jpeg do host para o diretório tmp do container.
+		 No exemplo acima, será copiado o arquiVO car.jpeg do host para o diretório tmp do container.
 		 
 Copiar arquivo do container para o host:
 Sintaxe: docker cp CONTAINER_ID:ARQUIVO_NO_CONTAINER ARQUIVO_NO_HOST
