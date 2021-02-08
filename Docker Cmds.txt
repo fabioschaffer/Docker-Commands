@@ -19,6 +19,8 @@ Executar imagem (criará e executatá um container):
 							onde -p <hostPort>:<containerPort>
 - Mapear volume:			docker run -v <DIRETORIO_HOST>:<DIRETORIO_CONTAINER> REPOSITORY:TAG
 							Exemplo: docker run -v /mnt/files/:/app/wwwroot/files REPOSITORY:TAG
+- Variável de ambiente:		docker run -e NOME_VAR=VALOR
+							Exemplo: docker run -e TZ=GMT REPOSITORY:TAG
 
 Reiniciar container:
 Sintaxe: docker restart NAME
@@ -67,6 +69,7 @@ Copiar arquivo do host para o container:
 Sintaxe: docker cp ARQUIVO_NO_HOST CONTAINER_ID:DIRETORIO
 Exemplo: docker cp /tmp/car.jpeg 3hd3hd03hd3:/tmp
 		 No exemplo acima, será copiado o arquiVO car.jpeg do host para o diretório tmp do container.
+Observação: Recomenda-se fazer esse tipo de cópia com o container em execução. Pois se copiar com ele parado, ele podem ocorrer erros e inconsistências ao reiniciá-lo.
 		 
 Copiar arquivo do container para o host:
 Sintaxe: docker cp CONTAINER_ID:ARQUIVO_NO_CONTAINER ARQUIVO_NO_HOST
