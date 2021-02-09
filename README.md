@@ -1,0 +1,1 @@
+Contém comandos e funcionalidades para serem executadas no Docker.
